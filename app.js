@@ -1,7 +1,7 @@
 alert('Welcome to the Guessing game!')
 
 let userGuess = Number(prompt('Input a number between 1 and 100'))
-let secretNumber = Math.round(Math.random() * 100)
+let secretNumber = 2
 let userAttempts = 1
 
 while(isNaN(userGuess)) {
