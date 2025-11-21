@@ -1,12 +1,13 @@
 alert('Welcome to the Guessing game!')
 
-let userGuess = Number(prompt('Input a number between 1 and 100'))
-let secretNumber = Math.round(Math.random() * 100)
+let maxNumber = 500
+let userGuess = Number(prompt(`Input a number between 1 and ${maxNumber}`))
+let secretNumber = Math.floor(Math.random() * 500) + 1
 let userAttempts = 1
 
 while(isNaN(userGuess)) {
     alert('Please type a valid number')
-    userGuess = Number(prompt('Input a number between 1 and 100'))
+    userGuess = Number(prompt(`Input a number between 1 and ${maxNumber}`))
 }
 
 while(userGuess !== secretNumber) {
