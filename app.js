@@ -1,20 +1,23 @@
-alert('Bem vindo ao jogo da advinhação!')
-let chute = Number(prompt('Insira um número de 1 a 100'))
-let numeroSecreto = 3
-let quantidadeDeTentativas = 1
+alert('Welcome to the Guessing game!')
 
-while(isNaN(chute)) {
-    alert('Por favor, digite um número')
-    chute = Number(prompt('Insira um número de 1 a 100'))
+let userGuess = Number(prompt('Input a number between 1 and 100'))
+let secretNumber = Math.round(Math.random() * 100)
+let userAttempts = 1
+
+while(isNaN(userGuess)) {
+    alert('Please type a valid number')
+    userGuess = Number(prompt('Input a number between 1 and 100'))
 }
 
-while(chute !== numeroSecreto) {
-    chute > numeroSecreto
-        ? alert(`O número secreto é menor que ${chute}`)
-        : alert(`O número secreto é maior que ${chute} `)
+while(userGuess !== secretNumber) {
+    userGuess > secretNumber
+        ? alert(`The secret number is lower than ${userGuess}`)
+        : alert(`The secret number is higher than ${userGuess} `)
+
+        userAttempts++
         
-    chute = Number(prompt('Insira um número de 1 a 100'))
+    userGuess = Number(prompt('Input a number between 1 and 100'))
 }
-let tentativaNoPluralOuSingular = quantidadeDeTentativas > 1 ? 'tentativas':'tentativa'
+let attemptOrAttemptsWord = userAttempts > 1 ? 'attempts':'attempt'
 
-alert(`Parabéns! você acertou o número secreto ${numeroSecreto} com ${quantidadeDeTentativas} ${tentativaNoPluralOuSingular}`)
+alert(`Congratulations! The secret number is ${secretNumber}! You guess it with ${userAttempts} ${attemptOrAttemptsWord}`)
